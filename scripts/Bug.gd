@@ -10,9 +10,12 @@ export(int) var health = 5 setget set_health
 export(Script) var defaultBrain
 export(Script) var playerBrain
 
+var explosionDeathScene = preload("res://components/ExplosionDeath.tscn")
+
 var input_vector = Vector2.ZERO
 var velocity = Vector2.ZERO
 var look_at = Vector2.RIGHT
+
 
 func set_health(value):
 	health = value
@@ -45,11 +48,26 @@ func _physics_process(delta):
 	if sign(velocity.x) != 0:
 		$Sprite.scale.x = sign(velocity.x)
 
-func _on_Hurtbox_area_entered(area):
-	set_health(health - area.get_parent().damage)
-	$AnimationPlayer.play("damage_flash")
+func hit(damage):
+	set_health(health - damage)
+	$DamageFlashPlayer.play("damage_flash")
+	var camera = get_tree().get_nodes_in_group("Camera")[0]
+	camera.small_shake()
+	
+
+#func damage_flash():
+#	var tween = Tween.new()
+#	tween.interpolate_property(get_node("Sprite"), "modulate", Color(1,0.5,0.5,1), Color(1,1,1,1),  0.5)
+#	tween.start()
 
 func die():
+	var camera = get_tree().get_nodes_in_group("Camera")[0]
+	camera.medium_shake()
+	
+	var explosion = explosionDeathScene.instance()
+	get_tree().get_root().get_child(0).add_child(explosion)
+	explosion.global_position = global_position
+	
 	emit_signal("died")
 	queue_free()
 

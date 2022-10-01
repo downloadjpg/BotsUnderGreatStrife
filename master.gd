@@ -12,4 +12,3 @@ func change_scene(next_scene):
 	current_scene = load(next_scene).instance()
 	add_child(current_scene)
 	animationPlayer.play_backwards("fade_in")
-	

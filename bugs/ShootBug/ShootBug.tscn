@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://bugs/ShootBug/ShootBug.gd" type="Script" id=1]
 [ext_resource path="res://assets/bug_green.png" type="Texture" id=2]
@@ -71,12 +71,30 @@ tracks/0/keys = {
 "values": [ 0, 3 ]
 }
 
+[sub_resource type="Animation" id=5]
+resource_name = "damage_flash"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+
 [node name="ShootBug" type="KinematicBody2D" groups=["Bugs"]]
+collision_layer = 4
+collision_mask = 5
 script = ExtResource( 1 )
 move_speed = 40
 health = 4
 defaultBrain = ExtResource( 5 )
 playerBrain = ExtResource( 6 )
+bullet_spawn_speed = 20
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )
@@ -96,3 +114,6 @@ shape = SubResource( 1 )
 anims/RESET = SubResource( 2 )
 anims/damage_flash = SubResource( 4 )
 anims/walk = SubResource( 3 )
+
+[node name="DamageFlashPlayer" type="AnimationPlayer" parent="."]
+anims/damage_flash = SubResource( 5 )

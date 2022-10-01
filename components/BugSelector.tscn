@@ -33,6 +33,7 @@ shape = SubResource( 1 )
 modulate = Color( 1, 1, 1, 0.203922 )
 position = Vector2( 0, -8 )
 frames = SubResource( 4 )
+frame = 1
 playing = true
 
 [connection signal="input_event" from="." to="." method="_on_BugSelector_input_event"]
