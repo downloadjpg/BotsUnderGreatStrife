@@ -17,7 +17,7 @@ func get_player_input() -> Vector2:
 
 func _physics_process(delta):
 	body.set_input_vector(get_player_input())
-	body.set_look_at((get_viewport().get_mouse_position() - body.global_position).normalized())
+	body.set_look_at(body.get_local_mouse_position().normalized())
 	
 	if Input.is_action_just_pressed("action"):
 		body.action()

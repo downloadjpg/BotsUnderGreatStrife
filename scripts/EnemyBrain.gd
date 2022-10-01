@@ -3,7 +3,9 @@ extends Node
 
 onready var body = get_parent()
 
-var time = 0
-func _physics_process(delta):
-	time += delta
-	body.set_input_vector(Vector2(1, sin(time)).normalized())
+func get_player_position() -> Vector2:
+	if get_tree().get_nodes_in_group("Player").size() != 0:
+		var player = get_tree().get_nodes_in_group("Player")[0]
+		return player.global_position
+	else:
+		return Vector2(0,0)

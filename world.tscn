@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://bugs/ShootBug/ShootBug.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/BugManager.gd" type="Script" id=2]
-[ext_resource path="res://SceneTransitionRect.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/pick_just_one_bug.png" type="Texture" id=3]
+[ext_resource path="res://bugs/LaserBug/LaserBug.tscn" type="PackedScene" id=4]
 [ext_resource path="res://assets/desert_tiles.png" type="Texture" id=7]
 [ext_resource path="res://assets/wall.png" type="Texture" id=8]
 
@@ -53,6 +54,26 @@ points = PoolVector2Array( 20, 30, 0, 30, 0, 10, 20, 10 )
 } ]
 1/z_index = 1
 
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 280, 32 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 3 )
+region = Rect2( 280, 0, 280, 32 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 3 )
+region = Rect2( 560, 0, 280, 32 )
+
+[sub_resource type="SpriteFrames" id=7]
+animations = [ {
+"frames": [ SubResource( 4 ), SubResource( 5 ), SubResource( 6 ) ],
+"loop": true,
+"name": "default",
+"speed": 4.0
+} ]
+
 [node name="world" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -76,12 +97,11 @@ position = Vector2( 192, -62 )
 [node name="ShootBug2" parent="GameManager" instance=ExtResource( 1 )]
 position = Vector2( 256, -62 )
 
-[node name="ShootBug3" parent="GameManager" instance=ExtResource( 1 )]
-position = Vector2( 320, -62 )
+[node name="LaserBug" parent="GameManager" instance=ExtResource( 4 )]
+position = Vector2( 360, -62 )
 
-[node name="SceneTransitionRect" parent="." instance=ExtResource( 3 )]
-anchor_right = 0.0
-margin_left = 152.0
-margin_top = -160.0
-margin_right = 152.0
-margin_bottom = -160.0
+[node name="JUSTPICKONEBUG" type="AnimatedSprite" parent="GameManager"]
+position = Vector2( 279, -152 )
+frames = SubResource( 7 )
+frame = 2
+playing = true
