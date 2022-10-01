@@ -91,6 +91,11 @@ action={
  ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="World"
+2d_physics/layer_2="Hitbox/Hurtbox"
+
 [physics]
 
 common/enable_pause_aware_picking=true

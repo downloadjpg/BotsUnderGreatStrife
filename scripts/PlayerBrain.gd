@@ -16,12 +16,10 @@ func get_player_input() -> Vector2:
 	return vec.normalized()
 
 
-#func get_lookat_vector():
-#	return ( - global_position()).normalized()
-
 func _physics_process(delta):
 	body.set_input_vector(get_player_input())
-	#body.set_lookat_vector(get_lookat_vector())
+	#body.set_look_at(get_viewport().get_mouse_position())
+	body.set_look_at((get_viewport().get_mouse_position() - body.global_position).normalized())
 	
 	if Input.is_action_just_pressed("action"):
 		body.action()
