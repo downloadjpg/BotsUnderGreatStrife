@@ -8,10 +8,59 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "KinematicBody2D",
+"class": "EnemyActor",
+"language": "GDScript",
+"path": "res://EnemyActor.gd"
+}, {
+"base": "Node",
+"class": "EnemyBrain",
+"language": "GDScript",
+"path": "res://EnemyBrain.gd"
+} ]
+_global_script_class_icons={
+"EnemyActor": "",
+"EnemyBrain": ""
+}
+
 [application]
 
 config/name="DevLUp2022"
+run/main_scene="res://world.tscn"
 config/icon="res://icon.png"
+
+[display]
+
+window/size/width=300
+window/size/height=200
+window/size/test_width=1200
+window/size/test_height=800
+window/stretch/mode="viewport"
+window/stretch/aspect="keep"
+
+[input]
+
+move_up={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":87,"unicode":0,"echo":false,"script":null)
+ ]
+}
+move_down={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":83,"unicode":0,"echo":false,"script":null)
+ ]
+}
+move_left={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":65,"unicode":0,"echo":false,"script":null)
+ ]
+}
+move_right={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":68,"unicode":0,"echo":false,"script":null)
+ ]
+}
 
 [physics]
 
