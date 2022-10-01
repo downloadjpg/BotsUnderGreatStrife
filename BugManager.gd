@@ -5,6 +5,7 @@ export(String, FILE, "*.tscn") var game_over_scene
 
 func _ready():
 	for node in get_tree().get_nodes_in_group("Bugs"):
+		print(node)
 		node.connect("died", self, "_on_bug_death")
 		node.get_node("BugSelector").connect("bug_selected", self, "_on_bug_selected")
 	

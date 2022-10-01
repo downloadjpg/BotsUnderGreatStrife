@@ -6,11 +6,13 @@ var laser_scene = preload("res://bugs/LaserBug/Laser.tscn")
 
 func action():
 	# Get collision point
+	$BugSounds/laserSound.play()
 	$LaserRay.cast_to = get_local_mouse_position() * 100
 	$LaserRay.enabled = true
 	$LaserRay.force_raycast_update()
 	var collision_point = $LaserRay.get_collision_point()
 	var laser = laser_scene.instance()
+	laser.excluded_areas.append($Hurtbox)
 	get_tree().get_root().get_child(0).add_child(laser)
 	
 	var theta = get_local_mouse_position().angle()

@@ -1,11 +1,12 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://bugs/ShootBug/ShootBug.gd" type="Script" id=1]
 [ext_resource path="res://assets/bug_green.png" type="Texture" id=2]
-[ext_resource path="res://components/Hurtbox.tscn" type="PackedScene" id=3]
-[ext_resource path="res://components/BugSelector.tscn" type="PackedScene" id=4]
+[ext_resource path="res://bugs/components/Hurtbox.tscn" type="PackedScene" id=3]
+[ext_resource path="res://bugs/components/BugSelector.tscn" type="PackedScene" id=4]
 [ext_resource path="res://bugs/ShootBug/ShootBugBrain.gd" type="Script" id=5]
-[ext_resource path="res://scripts/PlayerBrain.gd" type="Script" id=6]
+[ext_resource path="res://bugs/PlayerBrain.gd" type="Script" id=6]
+[ext_resource path="res://bugs/components/BugSounds.tscn" type="PackedScene" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8, 8 )
@@ -94,7 +95,6 @@ move_speed = 40
 health = 4
 defaultBrain = ExtResource( 5 )
 playerBrain = ExtResource( 6 )
-bullet_spawn_speed = 20
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )
@@ -118,3 +118,5 @@ anims/walk = SubResource( 3 )
 
 [node name="DamageFlashPlayer" type="AnimationPlayer" parent="."]
 anims/damage_flash = SubResource( 5 )
+
+[node name="BugSounds" parent="." instance=ExtResource( 7 )]

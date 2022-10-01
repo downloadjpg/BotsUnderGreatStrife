@@ -4,7 +4,7 @@
 [ext_resource path="res://bugs/ShootBug/ShootBug.tscn" type="PackedScene" id=2]
 [ext_resource path="res://BugManager.gd" type="Script" id=3]
 [ext_resource path="res://assets/pick_just_one_bug.png" type="Texture" id=4]
-[ext_resource path="res://camera/Camera.tscn" type="PackedScene" id=5]
+[ext_resource path="res://bugs/camera/Camera.tscn" type="PackedScene" id=5]
 [ext_resource path="res://environment/Spikes.tscn" type="PackedScene" id=6]
 [ext_resource path="res://assets/desert_tiles.png" type="Texture" id=7]
 [ext_resource path="res://assets/wall.png" type="Texture" id=8]
@@ -93,6 +93,7 @@ position = Vector2( -101, -14 )
 
 [node name="BugManager" type="Node" parent="."]
 script = ExtResource( 3 )
+next_level_scene = "res://levels/LevelTwo.tscn"
 
 [node name="ShootBug" parent="BugManager" instance=ExtResource( 2 )]
 position = Vector2( 192, -62 )
@@ -106,5 +107,4 @@ position = Vector2( 360, -62 )
 [node name="JUSTPICKONEBUG" type="AnimatedSprite" parent="BugManager"]
 position = Vector2( 279, -152 )
 frames = SubResource( 7 )
-frame = 2
 playing = true

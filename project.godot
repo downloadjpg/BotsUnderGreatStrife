@@ -12,12 +12,12 @@ _global_script_classes=[ {
 "base": "KinematicBody2D",
 "class": "Bug",
 "language": "GDScript",
-"path": "res://scripts/Bug.gd"
+"path": "res://bugs/Bug.gd"
 }, {
-"base": "Node",
+"base": "Reference",
 "class": "EnemyBrain",
 "language": "GDScript",
-"path": "res://scripts/EnemyBrain.gd"
+"path": "res://bugs/EnemyBrain.gd"
 } ]
 _global_script_class_icons={
 "Bug": "",

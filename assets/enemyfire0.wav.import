@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/enemyfire0.wav-4819528cb590ebc419d0be9f10048ed9.sample"
+
+[deps]
+
+source_file="res://assets/enemyfire0.wav"
+dest_files=[ "res://.import/enemyfire0.wav-4819528cb590ebc419d0be9f10048ed9.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

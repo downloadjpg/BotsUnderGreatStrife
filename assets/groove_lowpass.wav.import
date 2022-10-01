@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/groove_lowpass.wav-a5c7f9e50cd7d5dc249cef97d1afd962.sample"
+
+[deps]
+
+source_file="res://assets/groove_lowpass.wav"
+dest_files=[ "res://.import/groove_lowpass.wav-a5c7f9e50cd7d5dc249cef97d1afd962.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
