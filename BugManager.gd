@@ -1,5 +1,8 @@
 extends Node
 
+export(String, FILE, "*.tscn") var next_level_scene
+export(String, FILE, "*.tscn") var game_over_scene
+
 func _ready():
 	for node in get_tree().get_nodes_in_group("Bugs"):
 		node.connect("died", self, "_on_bug_death")
@@ -25,8 +28,8 @@ func _on_bug_death():
 
 
 func change_level():
-	get_tree().get_root().get_child(0).change_scene("res://menu/MainMenu.tscn")
+	get_tree().get_root().get_child(0).change_scene(next_level_scene)
 
 
 func game_over():
-	get_tree().get_root().get_child(0).change_scene("res://menu/MainMenu.tscn")
+	get_tree().get_root().get_child(0).change_scene(game_over_scene)

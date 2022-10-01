@@ -3,8 +3,6 @@ extends Node
 onready var animationPlayer = $CanvasLayer/SceneTransitionRect/AnimationPlayer
 onready var current_scene = $MainMenu
 
-var sceneList = ["res://world.tscn", "res://world.tscn", "res://world.tscn", "res://menu/MainMenu.tscn"]
-
 func change_scene(next_scene):
 	animationPlayer.play("fade_in")
 	yield(animationPlayer, "animation_finished")
