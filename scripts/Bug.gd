@@ -7,6 +7,7 @@ signal died
 
 export(int) var move_speed = 20
 export(int) var health = 5 setget set_health
+export(float) var iFramesInSeconds = 0.8
 export(Script) var defaultBrain
 export(Script) var playerBrain
 
@@ -15,6 +16,7 @@ var explosionDeathScene = preload("res://components/ExplosionDeath.tscn")
 var input_vector = Vector2.ZERO
 var velocity = Vector2.ZERO
 var look_at = Vector2.RIGHT
+var invincible = false
 
 
 func set_health(value):
@@ -49,10 +51,14 @@ func _physics_process(delta):
 		$Sprite.scale.x = sign(velocity.x)
 
 func hit(damage):
-	set_health(health - damage)
-	$DamageFlashPlayer.play("damage_flash")
-	var camera = get_tree().get_nodes_in_group("Camera")[0]
-	camera.small_shake()
+	if !invincible:
+		set_health(health - damage)
+		$DamageFlashPlayer.play("damage_flash")
+		var camera = get_tree().get_nodes_in_group("Camera")[0]
+		camera.small_shake()
+		invincible = true
+		yield(get_tree().create_timer(iFramesInSeconds), "timeout")
+		invincible = false
 	
 
 #func damage_flash():

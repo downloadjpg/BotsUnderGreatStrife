@@ -105,6 +105,7 @@ frame = 3
 shape = SubResource( 1 )
 
 [node name="Hurtbox" parent="." instance=ExtResource( 2 )]
+collision_layer = 10
 
 [node name="BugSelector" parent="." instance=ExtResource( 1 )]
 

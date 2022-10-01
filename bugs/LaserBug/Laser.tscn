@@ -72,7 +72,7 @@ shape = SubResource( 1 )
 [node name="Base" type="AnimatedSprite" parent="."]
 position = Vector2( 16, 0 )
 frames = SubResource( 6 )
-frame = 2
+frame = 3
 playing = true
 
 [node name="Tip" type="AnimatedSprite" parent="."]

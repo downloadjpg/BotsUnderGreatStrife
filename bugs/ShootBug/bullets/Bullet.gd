@@ -12,8 +12,8 @@ func _physics_process(delta):
 
 func _on_Hitbox_area_entered(area):
 	if excluded_areas.find(area) == -1:
-		queue_free()
 		area.get_parent().hit(damage)
+		queue_free()
 
 
 func _on_Hitbox_body_entered(body):
