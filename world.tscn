@@ -103,5 +103,5 @@ position = Vector2( 360, -62 )
 [node name="JUSTPICKONEBUG" type="AnimatedSprite" parent="GameManager"]
 position = Vector2( 279, -152 )
 frames = SubResource( 7 )
-frame = 2
+frame = 1
 playing = true

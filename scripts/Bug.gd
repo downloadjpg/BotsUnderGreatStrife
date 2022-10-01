@@ -13,7 +13,6 @@ export(Script) var playerBrain
 var input_vector = Vector2.ZERO
 var velocity = Vector2.ZERO
 var look_at = Vector2.RIGHT
-var my_hitboxes = []
 
 func set_health(value):
 	health = value

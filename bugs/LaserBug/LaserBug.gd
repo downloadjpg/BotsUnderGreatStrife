@@ -9,7 +9,6 @@ func action():
 	$LaserRay.enabled = true
 	var collision_point = $LaserRay.get_collision_point()
 	var laser = laser_scene.instance()
-	my_hitboxes.append(laser.get_node("Hitbox"))
 	add_child(laser)
 	laser.global_position = global_position
 	laser.get_node("Tip").global_position = collision_point
