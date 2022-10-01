@@ -10,9 +10,9 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "KinematicBody2D",
-"class": "Body",
+"class": "Bug",
 "language": "GDScript",
-"path": "res://scripts/Body.gd"
+"path": "res://scripts/Bug.gd"
 }, {
 "base": "Node",
 "class": "EnemyBrain",
@@ -20,7 +20,7 @@ _global_script_classes=[ {
 "path": "res://scripts/EnemyBrain.gd"
 } ]
 _global_script_class_icons={
-"Body": "",
+"Bug": "",
 "EnemyBrain": ""
 }
 

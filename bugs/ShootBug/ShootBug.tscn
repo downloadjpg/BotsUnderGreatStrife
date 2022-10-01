@@ -1,16 +1,32 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://bugs/ShootBug/ShootBug.gd" type="Script" id=1]
 [ext_resource path="res://assets/bug_green.png" type="Texture" id=2]
+[ext_resource path="res://components/Hurtbox.tscn" type="PackedScene" id=3]
+[ext_resource path="res://components/BugSelector.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scripts/EnemyBrain.gd" type="Script" id=5]
+[ext_resource path="res://scripts/PlayerBrain.gd" type="Script" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8, 8 )
 
-[node name="ShootBug" type="KinematicBody2D"]
+[node name="ShootBug" type="KinematicBody2D" groups=["Bugs"]]
 script = ExtResource( 1 )
+health = 1
+defaultBrain = ExtResource( 5 )
+playerBrain = ExtResource( 6 )
+bullet_spawn_speed = 200
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
+
+[node name="Hurtbox" parent="." instance=ExtResource( 3 )]
+
+[node name="BugSelector" parent="." instance=ExtResource( 4 )]
+
+[node name="Brain" type="Node" parent="."]
+
+[connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]

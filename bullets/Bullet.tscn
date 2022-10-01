@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://bullets/Bullet.gd" type="Script" id=1]
 [ext_resource path="res://bullets/bullet.bmp" type="Texture" id=2]
+[ext_resource path="res://components/Hitbox.tscn" type="PackedScene" id=3]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 2 )
@@ -24,5 +25,9 @@ script = ExtResource( 1 )
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 3 )
-animation = "New Anim"
 playing = true
+
+[node name="Hitbox" parent="." instance=ExtResource( 3 )]
+
+[connection signal="area_entered" from="Hitbox" to="." method="_on_Hitbox_area_entered"]
+[connection signal="body_entered" from="Hitbox" to="." method="_on_Hitbox_body_entered"]
