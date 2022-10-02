@@ -24,7 +24,7 @@ position = Vector2( 280, -88 )
 
 [node name="BugManager" parent="." instance=ExtResource( 4 )]
 next_level_scene = "res://levels/Level10.tscn"
-this_scene = "res://levels/Level10.tscn"
+this_scene = "res://menu/EndScreen.tscn"
 
 [node name="FastBug2" parent="BugManager" instance=ExtResource( 5 )]
 position = Vector2( 361, -110 )

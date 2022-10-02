@@ -1,9 +1,7 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://BugManager.tscn" type="PackedScene" id=1]
 [ext_resource path="res://levels/TileSet.tres" type="TileSet" id=2]
-[ext_resource path="res://bugs/BeetleBug/BeetleBug.tscn" type="PackedScene" id=3]
-[ext_resource path="res://bugs/BeetleBug/BeetleBugBrain.gd" type="Script" id=4]
 [ext_resource path="res://bugs/FastBug/FastBug.tscn" type="PackedScene" id=6]
 [ext_resource path="res://bugs/camera/Camera.tscn" type="PackedScene" id=7]
 
@@ -26,6 +24,5 @@ this_scene = "res://levels/Level1.tscn"
 [node name="FastBug2" parent="BugManager" instance=ExtResource( 6 )]
 position = Vector2( 346, -85 )
 
-[node name="BeetleBug" parent="BugManager" instance=ExtResource( 3 )]
-position = Vector2( 192, -72 )
-defaultBrain = ExtResource( 4 )
+[node name="FastBug3" parent="BugManager" instance=ExtResource( 6 )]
+position = Vector2( 216, -85 )
