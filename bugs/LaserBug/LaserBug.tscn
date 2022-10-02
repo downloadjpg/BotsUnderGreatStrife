@@ -8,7 +8,8 @@
 [ext_resource path="res://assets/bug_purple.png" type="Texture" id=6]
 [ext_resource path="res://bugs/components/BugSounds.tscn" type="PackedScene" id=7]
 
-[sub_resource type="CircleShape2D" id=6]
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 6, 4 )
 
 [sub_resource type="Animation" id=2]
 length = 0.001

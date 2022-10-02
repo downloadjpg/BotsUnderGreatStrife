@@ -8,7 +8,8 @@
 [ext_resource path="res://bugs/TurretBug/TurretPlayerBrain.gd" type="Script" id=6]
 [ext_resource path="res://bugs/TurretBug/TurretBugBrain.gd" type="Script" id=7]
 
-[sub_resource type="CircleShape2D" id=6]
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 6, 4 )
 
 [sub_resource type="Animation" id=2]
 length = 0.001
@@ -91,13 +92,14 @@ tracks/0/keys = {
 collision_layer = 4
 collision_mask = 5
 script = ExtResource( 4 )
-move_speed = 5
+move_speed = 10
 defaultBrain = ExtResource( 7 )
 playerBrain = ExtResource( 6 )
 fire_cooldown = 0.2
 bullet_speed = 80
 
 [node name="Sprite" type="Sprite" parent="."]
+modulate = Color( 1, 0, 0, 1 )
 position = Vector2( 0, -8 )
 texture = ExtResource( 5 )
 hframes = 4

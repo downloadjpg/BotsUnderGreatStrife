@@ -9,7 +9,7 @@
 [ext_resource path="res://bugs/components/BugSounds.tscn" type="PackedScene" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 8, 8 )
+extents = Vector2( 6, 4 )
 
 [sub_resource type="Animation" id=2]
 length = 0.001
@@ -92,10 +92,11 @@ tracks/0/keys = {
 collision_layer = 4
 collision_mask = 5
 script = ExtResource( 5 )
-move_speed = 35
+move_speed = 40
 defaultBrain = ExtResource( 4 )
 playerBrain = ExtResource( 3 )
 bullet_spawn_speed = 60
+bullet_fire_delay = 1.0
 
 [node name="Brain" type="Node" parent="."]
 
