@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://levels/TileSet.tres" type="TileSet" id=1]
 [ext_resource path="res://bugs/LaserBug/LaserBug.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://bugs/FlyerBug/FlyerBug.tscn" type="PackedScene" id=5]
 [ext_resource path="res://bugs/BeetleBug/BeetleBug.tscn" type="PackedScene" id=6]
 [ext_resource path="res://environment/Spikes.tscn" type="PackedScene" id=7]
+[ext_resource path="res://levels/Barrel.tscn" type="PackedScene" id=8]
 
 [node name="world" type="Node2D"]
 
@@ -28,7 +29,7 @@ this_scene = "res://levels/Level6.tscn"
 position = Vector2( 197, -44 )
 
 [node name="LaserBug" parent="BugManager" instance=ExtResource( 2 )]
-position = Vector2( 347, -92 )
+position = Vector2( 356, -94 )
 
 [node name="FlyerBug" parent="BugManager" instance=ExtResource( 5 )]
 position = Vector2( 206, -114 )
@@ -41,3 +42,9 @@ position = Vector2( 299, -45 )
 
 [node name="Spikes3" parent="." instance=ExtResource( 7 )]
 position = Vector2( 299, -71 )
+
+[node name="Barrel" parent="." instance=ExtResource( 8 )]
+position = Vector2( 332, -61 )
+
+[node name="FlyerBug" parent="." instance=ExtResource( 5 )]
+position = Vector2( 376, -10 )

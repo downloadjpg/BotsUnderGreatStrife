@@ -3,7 +3,7 @@ extends KinematicBody2D
 var max_collisions = 4
 
 var velocity = Vector2.ZERO
-var damage = 1
+var damage = 2
 
 var count_collisions = 0
 
