@@ -99,7 +99,6 @@ fire_cooldown = 0.2
 bullet_speed = 80
 
 [node name="Sprite" type="Sprite" parent="."]
-modulate = Color( 1, 0, 0, 1 )
 position = Vector2( 0, -8 )
 texture = ExtResource( 5 )
 hframes = 4
