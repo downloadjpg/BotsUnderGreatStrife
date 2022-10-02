@@ -5,7 +5,7 @@ var laser_scene = preload("res://bugs/LaserBug/Laser.tscn")
 var prefire_scene = preload("res://bugs/LaserBug/LaserPreFire.tscn")
 var can_fire = true
 
-export var laser_cooldown = 2.0
+export var laser_cooldown = 2.5
 
 
 func action():
@@ -35,7 +35,6 @@ func action():
 		prefire.scale.x = (collision_point - global_position).length() / texture_width
 		print("scale")
 		yield(prefire, "animation_finished")
-		prefire.queue_free()
 		
 		# Laser firing -- -- - - -- 
 		
@@ -65,9 +64,6 @@ func action():
 		body.scale.x = (tip.global_position - base.global_position).length() / body.texture.get_width()
 		base.play()
 		tip.play()
-		yield(base, "animation_finished")
-		
-		laser.queue_free()
 		
 		yield(get_tree().create_timer(laser_cooldown), "timeout")
 		can_fire = true

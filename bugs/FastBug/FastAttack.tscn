@@ -39,8 +39,10 @@ script = ExtResource( 3 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 rotation = 1.57079
 frames = SubResource( 6 )
+frame = 2
 playing = true
 
 [node name="Hitbox" parent="." instance=ExtResource( 2 )]
 
+[connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
 [connection signal="area_entered" from="Hitbox" to="." method="_on_Hitbox_area_entered"]

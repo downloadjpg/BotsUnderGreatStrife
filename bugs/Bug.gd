@@ -51,7 +51,7 @@ func activate_as_player():
 
 
 func deactivate():
-	if brain != null:
+	if brain != null and !brain.is_queued_for_deletion():
 		brain.queue_free()
 		input_vector = Vector2.ZERO
 		velocity = Vector2.ZERO
