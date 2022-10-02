@@ -11,6 +11,8 @@ export(float) var iFramesInSeconds = 0.4
 export(Script) var defaultBrain
 export(Script) var playerBrain
 
+var brain : Node
+
 var explosionDeathScene = preload("res://bugs/components/ExplosionDeath.tscn")
 
 var input_vector = Vector2.ZERO
@@ -28,7 +30,7 @@ func _ready():
 	$Hurtbox.connect("area_entered", self, "_on_Hurtbox_area_entered")
 
 func activate_as_ai():
-	var brain = Node.new()
+	brain = Node.new()
 	brain.set_script(defaultBrain)
 	add_child(brain)
 	add_to_group("Enemies")
@@ -41,12 +43,19 @@ func activate_as_ai():
 
 func activate_as_player():
 	$BugSounds/playerSelectSound.play()
-	var brain = Node.new()
+	brain = Node.new()
 	brain.set_script(playerBrain)
 	add_child(brain)
 	add_to_group("Player")
 	$AnimationPlayer.play("walk")
-	
+
+
+func deactivate():
+	if brain != null:
+		brain.queue_free()
+		input_vector = Vector2.ZERO
+		velocity = Vector2.ZERO
+		set_physics_process(false) # stupid
 
 
 func _physics_process(delta):

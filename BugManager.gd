@@ -1,7 +1,7 @@
 extends Node
 
 export(String, FILE, "*.tscn") var next_level_scene
-export(String, FILE, "*.tscn") var game_over_scene
+export(String, FILE, "*.tscn") var this_scene
 
 func _ready():
 	yield(get_tree().create_timer(0.1), "timeout")
@@ -23,16 +23,18 @@ func _on_bug_selected(playerBug):
 func _on_bug_death():
 	yield(get_tree().create_timer(0.3), "timeout")
 	if get_tree().get_nodes_in_group("Enemies").size() == 0:
-		change_level()
+		$RetryMenu.visible = true
+		$RetryMenu/NextLevel.visible = true
+		for bug in get_tree().get_nodes_in_group("Bugs"):
+			bug.deactivate()
 	elif get_tree().get_nodes_in_group("Player").size() == 0:
-		game_over()
+		$RetryMenu.visible = true
+		for bug in get_tree().get_nodes_in_group("Bugs"):
+			bug.deactivate()
+
+func _on_RetryMenu_restart():
+	get_tree().get_root().get_child(0).change_scene(this_scene)
 
 
-
-
-func change_level():
+func _on_RetryMenu_next_level():
 	get_tree().get_root().get_child(0).change_scene(next_level_scene)
-
-
-func game_over():
-	get_tree().get_root().get_child(0).change_scene(game_over_scene)
