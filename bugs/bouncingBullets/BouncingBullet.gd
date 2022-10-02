@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-var max_collisions = 3
+var max_collisions = 4
 
 var velocity = Vector2.ZERO
 var damage = 1

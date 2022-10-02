@@ -5,7 +5,7 @@ var bullet_scene = preload("res://bugs/bouncingBullets/BouncingBullet.tscn")
 var can_fire = true
 
 
-export var fire_cooldown = 0.08
+export var fire_cooldown = 4.0
 export var bullet_speed = 35
 
 
@@ -19,12 +19,12 @@ func action():
 		# Play sound!
 		$BugSounds/fireSound.play()
 		
-		var bullet = bullet_scene.instance()
-		bullet.velocity = bullet_speed * look_at
-		bullet.excluded_areas.append($Hurtbox)
-		get_tree().current_scene.current_scene.add_child(bullet)
-
-		bullet.global_position = global_position
+		for n in range(1,10,1):
+			var bullet = bullet_scene.instance()
+			bullet.velocity = (bullet_speed + (3*n)) * look_at
+			bullet.excluded_areas.append($Hurtbox)
+			get_tree().current_scene.current_scene.add_child(bullet)
+			bullet.global_position = global_position
 		
 		yield(get_tree().create_timer(fire_cooldown), "timeout")
 		can_fire = true

@@ -121,6 +121,7 @@ tracks/0/keys = {
 collision_layer = 4
 collision_mask = 5
 script = ExtResource( 1 )
+health = 7
 defaultBrain = ExtResource( 8 )
 playerBrain = ExtResource( 6 )
 charge_speed = 120.0
