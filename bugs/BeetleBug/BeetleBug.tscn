@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://bugs/BeetleBug/BeetleBug.gd" type="Script" id=1]
 [ext_resource path="res://bugs/BeetleBug/beeeeetl.bmp" type="Texture" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://bugs/PlayerBrain.gd" type="Script" id=6]
 [ext_resource path="res://bugs/components/BugSounds.tscn" type="PackedScene" id=7]
 [ext_resource path="res://bugs/BeetleBug/BeetleBugBrain.gd" type="Script" id=8]
+[ext_resource path="res://bugs/Shadow.tscn" type="PackedScene" id=9]
 
 [sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 6, 4 )
@@ -125,6 +126,8 @@ health = 7
 defaultBrain = ExtResource( 8 )
 playerBrain = ExtResource( 6 )
 charge_speed = 120.0
+
+[node name="Shadow" parent="." instance=ExtResource( 9 )]
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )

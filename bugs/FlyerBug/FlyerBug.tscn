@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://bugs/components/BugSelector.tscn" type="PackedScene" id=1]
 [ext_resource path="res://bugs/components/Hurtbox.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://bugs/FlyerBug/FlyerBug.gd" type="Script" id=5]
 [ext_resource path="res://assets/bug_blue-Sheet.png" type="Texture" id=6]
 [ext_resource path="res://bugs/components/BugSounds.tscn" type="PackedScene" id=7]
+[ext_resource path="res://bugs/Shadow.tscn" type="PackedScene" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 6, 4 )
@@ -97,6 +98,8 @@ defaultBrain = ExtResource( 4 )
 playerBrain = ExtResource( 3 )
 bullet_spawn_speed = 60
 bullet_fire_delay = 1.0
+
+[node name="Shadow" parent="." instance=ExtResource( 8 )]
 
 [node name="Brain" type="Node" parent="."]
 

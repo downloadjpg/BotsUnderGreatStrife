@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://bugs/FastBug/FastBug.gd" type="Script" id=1]
 [ext_resource path="res://assets/bug_green.png" type="Texture" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://bugs/FastBug/FastBugBrain.gd" type="Script" id=5]
 [ext_resource path="res://bugs/PlayerBrain.gd" type="Script" id=6]
 [ext_resource path="res://bugs/components/BugSounds.tscn" type="PackedScene" id=7]
+[ext_resource path="res://bugs/Shadow.tscn" type="PackedScene" id=8]
 
 [sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 6, 4 )
@@ -97,6 +98,8 @@ health = 3
 defaultBrain = ExtResource( 5 )
 playerBrain = ExtResource( 6 )
 range_offset = 31
+
+[node name="Shadow" parent="." instance=ExtResource( 8 )]
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )
