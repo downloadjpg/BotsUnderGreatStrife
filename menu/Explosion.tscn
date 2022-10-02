@@ -37,12 +37,12 @@ animations = [ {
 } ]
 
 [sub_resource type="CircleShape2D" id=8]
-radius = 26.6667
+radius = 32.0
 
 [node name="Explosion" type="AnimatedSprite"]
 scale = Vector2( 1.5, 1.5 )
 frames = SubResource( 7 )
-frame = 1
+frame = 3
 playing = true
 script = ExtResource( 2 )
 
@@ -52,5 +52,6 @@ script = ExtResource( 2 )
 shape = SubResource( 8 )
 
 [connection signal="animation_finished" from="." to="." method="_on_Explosion_animation_finished"]
+[connection signal="area_entered" from="Hitbox" to="." method="_on_Hitbox_area_entered"]
 
 [editable path="Hitbox"]
