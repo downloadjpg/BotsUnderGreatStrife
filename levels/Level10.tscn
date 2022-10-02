@@ -23,8 +23,8 @@ tile_data = PoolIntArray( -983037, 0, 0, -983036, 0, 4, -983035, 0, 0, -983034, 
 position = Vector2( 280, -88 )
 
 [node name="BugManager" parent="." instance=ExtResource( 4 )]
-next_level_scene = "res://levels/Level10.tscn"
-this_scene = "res://menu/EndScreen.tscn"
+next_level_scene = "res://menu/EndScreen.tscn"
+this_scene = "res://levels/Level10.tscn"
 
 [node name="FastBug2" parent="BugManager" instance=ExtResource( 5 )]
 position = Vector2( 361, -110 )

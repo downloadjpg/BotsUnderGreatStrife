@@ -23,12 +23,12 @@ func _on_bug_selected(playerBug):
 func _on_bug_death():
 	yield(get_tree().create_timer(0.3), "timeout")
 	if get_tree().get_nodes_in_group("Enemies").size() == 0:
-		$RetryMenu.visible = true
-		$RetryMenu/NextLevel.visible = true
+		$stupidZindex/RetryMenu.visible = true
+		$stupidZindex/RetryMenu/NextLevel.visible = true
 		for bug in get_tree().get_nodes_in_group("Bugs"):
 			bug.deactivate()
 	elif get_tree().get_nodes_in_group("Player").size() == 0:
-		$RetryMenu.visible = true
+		$stupidZindex/RetryMenu.visible = true
 		for bug in get_tree().get_nodes_in_group("Bugs"):
 			bug.deactivate()
 
