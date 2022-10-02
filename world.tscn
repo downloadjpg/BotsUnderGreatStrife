@@ -1,7 +1,7 @@
 [gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://bugs/LaserBug/LaserBug.tscn" type="PackedScene" id=1]
-[ext_resource path="res://bugs/ShootBug/ShootBug.tscn" type="PackedScene" id=2]
+[ext_resource path="res://bugs/FastBug/FastBug.tscn" type="PackedScene" id=2]
 [ext_resource path="res://BugManager.gd" type="Script" id=3]
 [ext_resource path="res://assets/pick_just_one_bug.png" type="Texture" id=4]
 [ext_resource path="res://bugs/camera/Camera.tscn" type="PackedScene" id=5]

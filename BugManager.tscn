@@ -2,7 +2,7 @@
 
 [ext_resource path="res://BugManager.gd" type="Script" id=1]
 [ext_resource path="res://assets/pick_just_one_bug.png" type="Texture" id=7]
-[ext_resource path="res://bugs/ShootBug/ShootBug.tscn" type="PackedScene" id=8]
+[ext_resource path="res://bugs/FastBug/FastBug.tscn" type="PackedScene" id=8]
 [ext_resource path="res://bugs/LaserBug/LaserBug.tscn" type="PackedScene" id=9]
 
 [sub_resource type="AtlasTexture" id=4]
