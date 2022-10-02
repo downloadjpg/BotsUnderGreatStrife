@@ -14,6 +14,7 @@ export(Script) var playerBrain
 var brain : Node
 
 var explosionDeathScene = preload("res://bugs/components/ExplosionDeath.tscn")
+var playerIndicator = preload("res://bugs/PlayerIndicator.tscn")
 
 var input_vector = Vector2.ZERO
 var velocity = Vector2.ZERO
@@ -48,6 +49,9 @@ func activate_as_player():
 	add_child(brain)
 	add_to_group("Player")
 	$AnimationPlayer.play("walk")
+	var indicator = playerIndicator.instance()
+	add_child(indicator)
+	indicator.global_position = global_position
 
 
 func deactivate():

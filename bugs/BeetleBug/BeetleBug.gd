@@ -28,6 +28,8 @@ func action():
 		set_collision_layer_bit(2, false)
 		$Hurtbox.monitorable = false
 		$Hitbox.monitoring = true
+		$Sprite/ChargeSparks.visible = true
+		$Sprite/ChargeSparks.frame = 0
 		
 		yield(get_tree().create_timer(charge_duration), "timeout")
 		$Hurtbox.monitorable = true
@@ -36,6 +38,7 @@ func action():
 		set_collision_layer_bit(2, true)
 		state = "walking"
 		$AnimationPlayer.play("walk")
+		$Sprite/ChargeSparks.visible = false
 		
 		
 		yield(get_tree().create_timer(attack_cooldown), "timeout")
