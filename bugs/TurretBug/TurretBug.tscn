@@ -95,7 +95,7 @@ script = ExtResource( 4 )
 move_speed = 10
 defaultBrain = ExtResource( 7 )
 playerBrain = ExtResource( 6 )
-fire_cooldown = 0.2
+fire_cooldown = 2.0
 bullet_speed = 80
 
 [node name="Sprite" type="Sprite" parent="."]

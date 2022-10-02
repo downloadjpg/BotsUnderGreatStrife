@@ -3,7 +3,7 @@ extends Node2D
 var velocity = Vector2.ZERO
 var damage = 1
 
-var excluded_bodies = []
+var excluded_bodies = [self]
 var excluded_areas = []
 
 func _physics_process(delta):
@@ -17,5 +17,12 @@ func _on_Hitbox_area_entered(area):
 
 
 func _on_Hitbox_body_entered(body):
+	print("body entered")
+	if excluded_bodies.find(body) == -1:
+		queue_free()
+
+
+func _on_Area2D_body_entered(body):
+	print("body entered")
 	if excluded_bodies.find(body) == -1:
 		queue_free()
