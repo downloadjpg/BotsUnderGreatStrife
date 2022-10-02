@@ -14,7 +14,7 @@ func action():
 		var bullet = bullet_scene.instance()
 		bullet.excluded_areas.append($Hurtbox)
 		bullet.excluded_bodies.append(self)
-		get_tree().current_scene.add_child(bullet)
+		get_tree().current_scene.current_scene.add_child(bullet)
 		bullet.velocity = look_at * bullet_spawn_speed
 		bullet.velocity = bullet.velocity.rotated(deg2rad(randf() * bullet_spawn_spread_degrees))
 		bullet.global_position = global_position +  bullet.velocity.normalized()

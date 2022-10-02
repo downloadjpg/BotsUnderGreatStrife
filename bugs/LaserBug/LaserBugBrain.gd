@@ -1,5 +1,6 @@
 extends EnemyBrain
 
+export var time_between_moves = 1
 
 var attackPosition : Vector2
 var wanderDirection : Vector2
@@ -7,6 +8,7 @@ var moveTimer : Timer
 
 func _ready():
 	moveTimer = Timer.new()
+	moveTimer.wait_time = time_between_moves
 	moveTimer.autostart = true
 	add_child(moveTimer)
 	moveTimer.connect("timeout", self, "_on_moveTimer_timeout")

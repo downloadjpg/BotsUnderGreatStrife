@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://assets/snEnemyHit.wav" type="AudioStream" id=1]
 [ext_resource path="res://assets/enemyfire0.wav" type="AudioStream" id=2]
 [ext_resource path="res://assets/laser_blast.wav" type="AudioStream" id=3]
+[ext_resource path="res://assets/chassis_lock.wav" type="AudioStream" id=4]
 
 [node name="BugSounds" type="Node"]
 
@@ -16,4 +17,4 @@ stream = ExtResource( 2 )
 stream = ExtResource( 3 )
 
 [node name="playerSelectSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 2 )
+stream = ExtResource( 4 )

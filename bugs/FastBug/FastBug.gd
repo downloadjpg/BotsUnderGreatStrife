@@ -1,16 +1,27 @@
 extends Bug
 
+export(float) var attack_cooldown = 0.2
 export(int) var range_offset = 5
 
-var attack_scene = preload("res://bugs/bullets/Bullet.tscn")
+var attack_scene = preload("res://bugs/FastBug/FastAttack.tscn")
+var can_attack = true
 
 func action():
-	$BugSounds/fireSound.play()
-	var attack = attack_scene.instance()
-	attack.excluded_areas.append($Hurtbox)
-	get_tree().current_scene.add_child(attack)
+	if can_attack:
+		can_attack = false
+		$BugSounds/fireSound.play()
+		var attack = attack_scene.instance()
+		attack.excluded_areas.append($Hurtbox)
+		get_tree().current_scene.current_scene.add_child(attack)
 
-	attack.global_position = global_position + range_offset * look_at
+		attack.global_position = global_position + range_offset * look_at
+		attack.global_rotation = look_at.angle()
+
+		yield(attack.get_node("AnimatedSprite"), "animation_finished")
+		attack.queue_free()
+		
+		yield(get_tree().create_timer(attack_cooldown), "timeout")
+		can_attack = true
 	
 	
 

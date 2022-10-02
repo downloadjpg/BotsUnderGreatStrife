@@ -5,6 +5,7 @@ export(String, FILE, "*.tscn") var game_over_scene
 
 func _ready():
 	yield(get_tree().create_timer(0.1), "timeout")
+	$JUSTPICKONEBUGSOUND.play()
 	for node in get_tree().get_nodes_in_group("Bugs"):
 		print(node)
 		node.connect("died", self, "_on_bug_death")

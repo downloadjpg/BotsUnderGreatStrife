@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/PICK_JUST_ONE_BUG.wav-36eda0b8f7955c8201ec96ad352d24ff.sample"
+
+[deps]
+
+source_file="res://assets/PICK_JUST_ONE_BUG.wav"
+dest_files=[ "res://.import/PICK_JUST_ONE_BUG.wav-36eda0b8f7955c8201ec96ad352d24ff.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

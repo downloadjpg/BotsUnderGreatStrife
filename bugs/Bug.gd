@@ -7,7 +7,7 @@ signal died
 
 export(int) var move_speed = 20
 export(int) var health = 5 setget set_health
-export(float) var iFramesInSeconds = 0.8
+export(float) var iFramesInSeconds = 0.4
 export(Script) var defaultBrain
 export(Script) var playerBrain
 
@@ -34,6 +34,10 @@ func activate_as_ai():
 	add_to_group("Enemies")
 	$BugSelector.queue_free()
 	$AnimationPlayer.play("walk")
+	
+	var should_i_avoid_spikes = !$Hurtbox.get_collision_layer_bit(4)
+	set_collision_mask_bit(4, true)
+	set_collision_layer_bit(4, true)
 
 func activate_as_player():
 	$BugSounds/playerSelectSound.play()

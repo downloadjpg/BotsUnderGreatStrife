@@ -23,12 +23,12 @@ animations = [ {
 [sub_resource type="CircleShape2D" id=6]
 radius = 6.0
 
-[node name="BouncingBullet" type="RigidBody2D"]
+[node name="BouncingBullet" type="KinematicBody2D"]
+collision_layer = 0
 script = ExtResource( 3 )
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 3 )
-frame = 1
 playing = true
 
 [node name="Hitbox" parent="." instance=ExtResource( 1 )]

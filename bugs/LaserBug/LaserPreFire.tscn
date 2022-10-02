@@ -23,12 +23,13 @@ animations = [ {
 "frames": [ SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ) ],
 "loop": true,
 "name": "default",
-"speed": 10.0
+"speed": 5.0
 } ]
 
 [node name="Prefire" type="AnimatedSprite"]
+show_behind_parent = true
 position = Vector2( 0, -8 )
 frames = SubResource( 3 )
-frame = 6
+frame = 4
 playing = true
 centered = false

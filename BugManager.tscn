@@ -1,9 +1,8 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://BugManager.gd" type="Script" id=1]
+[ext_resource path="res://assets/PICK_JUST_ONE_BUG.wav" type="AudioStream" id=2]
 [ext_resource path="res://assets/pick_just_one_bug.png" type="Texture" id=7]
-[ext_resource path="res://bugs/FastBug/FastBug.tscn" type="PackedScene" id=8]
-[ext_resource path="res://bugs/LaserBug/LaserBug.tscn" type="PackedScene" id=9]
 
 [sub_resource type="AtlasTexture" id=4]
 atlas = ExtResource( 7 )
@@ -28,16 +27,10 @@ animations = [ {
 [node name="BugManager" type="Node"]
 script = ExtResource( 1 )
 
-[node name="ShootBug" parent="." instance=ExtResource( 8 )]
-position = Vector2( 192, -62 )
-
-[node name="ShootBug2" parent="." instance=ExtResource( 8 )]
-position = Vector2( 256, -62 )
-
-[node name="LaserBug" parent="." instance=ExtResource( 9 )]
-position = Vector2( 360, -62 )
-
 [node name="JUSTPICKONEBUG" type="AnimatedSprite" parent="."]
 position = Vector2( 279, -152 )
 frames = SubResource( 7 )
 playing = true
+
+[node name="JUSTPICKONEBUGSOUND" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
