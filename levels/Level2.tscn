@@ -44,9 +44,6 @@ position = Vector2( 412, -52 )
 next_level_scene = "res://levels/Level3.tscn"
 this_scene = "res://levels/Level2.tscn"
 
-[node name="FastBug2" parent="BugManager" instance=ExtResource( 5 )]
-position = Vector2( 167, -23 )
-
 [node name="FlyerBug" parent="BugManager" instance=ExtResource( 6 )]
 position = Vector2( 345, -37 )
 
